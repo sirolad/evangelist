@@ -1,0 +1,13 @@
+{
+    "name": "sirolad/open-source-evangelist-agnostic-package",
+    "description": "This package aims to provide an analysis based on the number of open source",
+    "type": "Project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "andela-sakande",
+            "email": "surajudeen.akande@andela.com"
+        }
+    ],
+    "require": {}
+}
