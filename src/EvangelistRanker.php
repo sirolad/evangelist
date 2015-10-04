@@ -5,13 +5,13 @@ namespace Sirolad\Evangelist;
 chdir(dirname(__DIR__));
 require_once 'vendor/autoload.php';
 
-use Sirolad\Evangelist\Fetcher;
+use Sirolad\Evangelist\EvangelistFetcher;
 
-class Ranker
+class EvangelistRanker
 {
     public function rankEvangelist($username)
     {
-        $fetch = new Fetcher();
+        $fetch = new EvangelistFetcher();
         $rank  = $fetch->getData($username);
         switch ($rank) {
             case $rank >= 21:

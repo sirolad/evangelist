@@ -10,7 +10,7 @@ use GuzzleHttp\Client;
 use Sirolad\Evangelist\Exceptions\NullUserException;
 use Sirolad\Evangelist\Exceptions\NotFoundException;
 
-class Fetcher
+class EvangelistFetcher
 {
     public static function loadDotenv()
     {
@@ -46,4 +46,3 @@ class Fetcher
         }
     }
 }
-
