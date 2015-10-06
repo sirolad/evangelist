@@ -17,7 +17,7 @@ DIRECTORY STRUCTURE
 
 ```
 src/           core package code
-tests/               tests of the core package
+tests/         tests of the core package
 ```
 
 ## Installation
