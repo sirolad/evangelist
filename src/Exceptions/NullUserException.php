@@ -2,7 +2,7 @@
 /**
  * This exception package handles empty username.
  *
- * @package Open Source Evangelist Agnostic Package
+ *@package Open Source Evangelist Agnostic Package
  *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
  *@license MIT <https://opensource.org/licenses/MIT>
  *@link http://www.github.com/andela-sakande
