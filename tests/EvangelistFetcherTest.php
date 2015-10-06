@@ -9,7 +9,6 @@
  *@link http://www.github.com/andela-sakande
  */
 
-
 namespace Sirolad\Evangelist\Test;
 
 use Sirolad\Evangelist\EvangelistFetcher;
