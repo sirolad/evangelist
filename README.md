@@ -12,6 +12,14 @@ of repositories as folows :
 
 `>= 21                 Most Senior Evangelist`
 
+DIRECTORY STRUCTURE
+-------------------
+
+```
+src/           core package code
+tests/               tests of the core package
+```
+
 ## Installation
 
 [PHP](https://php.net) 5.5+ and [Composer](https://getcomposer.org) are required.
@@ -19,7 +27,7 @@ of repositories as folows :
 Via Composer
 
 ``` bash
-$ composer require kola/open-source-evangelists
+$ composer Sirolad\evangelist
 ```
 
 ``` bash
