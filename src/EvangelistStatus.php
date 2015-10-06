@@ -2,9 +2,6 @@
 
 namespace Sirolad\Evangelist;
 
-chdir(dirname(__DIR__));
-require_once 'vendor/autoload.php';
-
 use Sirolad\Evangelist\EvangelistRanker;
 
 class EvangelistStatus
@@ -21,8 +18,5 @@ class EvangelistStatus
         $evangelist = new EvangelistRanker();
         $output = $evangelist->rankEvangelist($this->username);
         return $output;
-
     }
 }
-$status = new EvangelistStatus('sirolad');
-$status->getStatus();

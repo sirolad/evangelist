@@ -1,30 +1,41 @@
 <?php
-
 namespace Sirolad\Evangelist;
 
-chdir(dirname(__DIR__));
-require_once 'vendor/autoload.php';
-
 use Sirolad\Evangelist\EvangelistFetcher;
+use GuzzleHttp\Exception\ClientException;
+use Sirolad\Evangelist\Exceptions\NullUserException;
 
 class EvangelistRanker
 {
     public function rankEvangelist($username)
     {
-        $fetch = new EvangelistFetcher();
-        $rank  = $fetch->getData($username);
+        try {
+            if (empty($username)) {
+                throw new NullUserException();
+            }
+            $fetch = new EvangelistFetcher();
+            $rank = $fetch->getData($username);
+        // } catch (ClientException $e) {
+        //     return "Unregistered User!";
+        } catch (NullUserException $e) {
+            return $e->message();
+        }
+
         switch ($rank) {
+            case $rank < 5:
+                return "You need to set forth at dawn!";
+                break;
+
             case $rank >= 21:
-                echo "Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.".PHP_EOL;
+                return "Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.";
                 break;
-            case $rank >=11:
-                echo "Keep Up The Good Work, I crown you Associate Evangelist.".PHP_EOL;
+
+            case $rank >= 11:
+                return "Keep Up The Good Work, I crown you Associate Evangelist.";
                 break;
-            case $rank >=5:
-                echo "Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.".PHP_EOL;
-                break;
-            default:
-                echo "You need to have a minimum of 5 repos to be worthy!".PHP_EOL;
+
+            case $rank >= 5:
+                return "Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.";
                 break;
         }
     }
