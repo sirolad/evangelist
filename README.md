@@ -56,6 +56,10 @@ Please check out [CHANGELOG](CHANGELOG.md) file for information on what has chan
 $ vendor/bin/phpunit test
 ```
 
+``` composer
+$ composer test
+```
+
 ## Contributing
 
 Please check out [CONTRIBUTING](CONTRIBUTING.md) file for detailed contribution guidelines.
