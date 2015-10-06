@@ -15,8 +15,8 @@ class EvangelistRanker
             }
             $fetch = new EvangelistFetcher();
             $rank = $fetch->getData($username);
-        // } catch (ClientException $e) {
-        //     return "Unregistered User!";
+        } catch (ClientException $e) {
+            return "Unregistered User!";
         } catch (NullUserException $e) {
             return $e->message();
         }
