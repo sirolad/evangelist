@@ -22,7 +22,7 @@ EvangelistFetcher is the main class that connect to Github API using GuzzleHttp 
 class EvangelistFetcher
 {
     /*
-    * loadDotenv connects to the .env file in the root directory
+     * loadDotenv connects to the .env file in the root directory
      */
     public static function loadDotenv()
     {
@@ -37,7 +37,6 @@ class EvangelistFetcher
      * @return integer
      * @throws NullUserException
      * @throws ClientException
-     *
      */
 
     public function getData($username)

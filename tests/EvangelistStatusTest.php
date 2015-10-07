@@ -39,7 +39,7 @@ class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
      */
     public function testAssociateEvangelist()
     {
-        $test = new EvangelistStatus('andela-fokosun');
+        $test = new EvangelistStatus('andela-vdugeri');
         $result = $test->getStatus();
         $this->assertEquals('Keep Up The Good Work, I crown you Associate Evangelist.', $result);
     }

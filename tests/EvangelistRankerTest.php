@@ -42,7 +42,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
         * Test for Associate Evangelist.
          */
         $test = new EvangelistRanker();
-        $result = $test->rankEvangelist('andela-fokosun');
+        $result = $test->rankEvangelist('andela-vdugeri');
         $this->assertEquals('Keep Up The Good Work, I crown you Associate Evangelist.', $result);
     }
 
