@@ -27,7 +27,7 @@ tests/         tests of the core package
 Via Composer
 
 ``` bash
-$ composer Sirolad\evangelist
+$ composer install sirolad/open-source-evangelist-agnostic-package
 ```
 
 ``` bash
