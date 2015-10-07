@@ -18,31 +18,31 @@ EvangelistFetcherTest is the test for the EvangelistFetcher Class.
  */
 class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
 {
+    /*
+    * Test for checking empty input.
+    */
     public function testNullUserException()
     {
-        /*
-        * Test for checking empty input.
-         */
         $testFetcher = new EvangelistFetcher();
         $result = $testFetcher->getData('');
         $this->assertEquals('You have provided an empty username.Kindly input a valid one.', $result);
     }
 
+    /*
+    * Test for checking unregistered users input.
+     */
     public function testUnregisteredUser()
     {
-        /*
-        * Test for checking unregistered users input.
-         */
         $testFetcher = new EvangelistFetcher();
         $result = $testFetcher->getData('sirolady');
         $this->assertEquals('Unregistered User!', $result);
     }
 
+    /*
+    * Test for valid user.
+     */
     public function testValidUser()
     {
-        /*
-        * Test for valid user.
-         */
         $testFetcher = new EvangelistFetcher();
         $result = $testFetcher->getData('sirolad');
         $this->assertTrue(is_integer($result));

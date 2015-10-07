@@ -16,41 +16,41 @@ EvangelistRankerTest is the test for the EvangelistRanker Class.
  */
 class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
 {
+    /*
+    * Test for less than five repositories.
+     */
     public function testLessthan5repos()
     {
-        /*
-        * Test for less than five repositories.
-         */
         $test = new EvangelistRanker();
         $result = $test->rankEvangelist('andela-womokoro');
         $this->assertEquals('You need to set forth at dawn!', $result);
     }
 
+    /*
+    * Test for Junior Evangelist.
+     */
     public function testJuniorEvangelist()
     {
-        /*
-        * Test for Junior Evangelist.
-         */
         $test = new EvangelistRanker();
         $result = $test->rankEvangelist('andela-sakande');
         $this->assertEquals('Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.', $result);
     }
 
+    /*
+    * Test for Associate Evangelist.
+     */
     public function testAssociateEvangelist()
     {
-        /*
-        * Test for Associate Evangelist.
-         */
         $test = new EvangelistRanker();
         $result = $test->rankEvangelist('andela-vdugeri');
         $this->assertEquals('Keep Up The Good Work, I crown you Associate Evangelist.', $result);
     }
 
+    /*
+    * Test for Senior Evangelist.
+     */
     public function testMostSeniorEvangelist()
     {
-        /*
-        * Test for Senior Evangelist.
-         */
         $test = new EvangelistRanker();
         $result = $test->rankEvangelist('busayo');
         $this->assertEquals('Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.', $result);
