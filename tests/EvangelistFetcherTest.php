@@ -3,18 +3,19 @@
 /**
  * These are the test for the core files.
  *
- *@package Open Source Evangelist Agnostic Package
- *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
- *@license MIT <https://opensource.org/licenses/MIT>
- *@link http://www.github.com/andela-sakande
+ * @package Open Source Evangelist Agnostic Package
+ * @author Surajudeen AKANDE <surajudeen.akande@andela.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @link http://www.github.com/andela-sakande
  */
 
 namespace Sirolad\Evangelist\Test;
 
 use Sirolad\Evangelist\EvangelistFetcher;
+use GuzzleHttp\Client;
 
 /*
-EvangelistFetcherTest is the test for the EvangelistFetcher Class.
+* EvangelistFetcherTest is the test for the EvangelistFetcher Class.
  */
 class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
 {
@@ -32,13 +33,14 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
     {
         unset($this->testFetcher);
     }
-    /*
-    * Test for checking empty input.
-    */
+
+    /**
+     * @throws Sirolad\Evangelist\Exceptions\NullUserException
+     */
     public function testNullUserException()
     {
-        $test = 'You have provided an empty username.Kindly input a valid one.';
-        $this->assertEquals($test, $this->testFetcher->getData(''));
+        $this->setExpectedException('Sirolad\Evangelist\Exceptions\NullUserException');
+        $this->testFetcher->getData('', new Client);
     }
 
     /*
@@ -46,7 +48,7 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testUnregisteredUser()
     {
-        $this->assertEquals('Unregistered User!', $this->testFetcher->getData('sirolady'));
+        $this->assertEquals('Unregistered User!', $this->testFetcher->getData('sirolady', new Client));
     }
 
     /*
@@ -54,6 +56,6 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidUser()
     {
-        $this->assertTrue(is_integer($this->testFetcher->getData('sirolad')));
+        $this->assertTrue(is_integer($this->testFetcher->getData('sirolad', new Client)));
     }
 }

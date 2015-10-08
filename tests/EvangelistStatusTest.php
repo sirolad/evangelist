@@ -3,17 +3,17 @@
 /**
  * These are the test for the core files.
  *
- *@package Open Source Evangelist Agnostic Package
- *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
- *@license MIT <https://opensource.org/licenses/MIT>
- *@link http://www.github.com/andela-sakande
+ * @package Open Source Evangelist Agnostic Package
+ * @author Surajudeen AKANDE <surajudeen.akande@andela.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @link http://www.github.com/andela-sakande
  */
 namespace Sirolad\Evangelist\Test;
 
 use Sirolad\Evangelist\EvangelistStatus;
 
 /*
-EvangelistStatusTest is the test for the EvangelistStatus Class.
+* EvangelistStatusTest is the test for the EvangelistStatus Class.
  */
 class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
 {

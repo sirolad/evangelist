@@ -3,10 +3,10 @@
 /**
  * This package fetches the data of requested individual using the Github API and ranks the Individual into
  * categories based on the number of public repositories the individual possesses.
- *@package Open Source Evangelist Agnostic Package
- *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
- *@license MIT <https://opensource.org/licenses/MIT>
- *@link http://www.github.com/andela-sakande
+ * @package Open Source Evangelist Agnostic Package
+ * @author Surajudeen AKANDE <surajudeen.akande@andela.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @link http://www.github.com/andela-sakande
  **/
 
 namespace Sirolad\Evangelist;
@@ -14,7 +14,7 @@ namespace Sirolad\Evangelist;
 use Sirolad\Evangelist\EvangelistRanker;
 
 /*
-EvangelistStatus is the main class that finally outputs the rank of a requested repository.
+* EvangelistStatus is the main class that finally outputs the rank of a requested repository.
  */
 class EvangelistStatus
 {

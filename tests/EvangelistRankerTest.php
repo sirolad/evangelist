@@ -3,10 +3,10 @@
 /**
  * These are the test for the core files.
  *
- *@package Open Source Evangelist Agnostic Package
- *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
- *@license MIT <https://opensource.org/licenses/MIT>
- *@link http://www.github.com/andela-sakande
+ * @package Open Source Evangelist Agnostic Package
+ * @author Surajudeen AKANDE <surajudeen.akande@andela.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @link http://www.github.com/andela-sakande
  */
 namespace Sirolad\Evangelist\Test;
 
@@ -14,7 +14,7 @@ use Sirolad\Evangelist\EvangelistRanker;
 use Sirolad\Evangelist\EvangelistFetcher;
 
 /*
-EvangelistRankerTest is the test for the EvangelistRanker Class.
+* EvangelistRankerTest is the test for the EvangelistRanker Class.
  */
 class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
 {

@@ -3,19 +3,20 @@
 /**
  * This package fetches the data of requested individual using the Github API and ranks the Individual into
  * categories based on the number of public repositories the individual possesses.
- *@package Open Source Evangelist Agnostic Package
- *@author Surajudeen AKANDE <surajudeen.akande@andela.com>
- *@license MIT <https://opensource.org/licenses/MIT>
- *@link http://www.github.com/andela-sakande
+ * @package Open Source Evangelist Agnostic Package
+ * @author Surajudeen AKANDE <surajudeen.akande@andela.com>
+ * @license MIT <https://opensource.org/licenses/MIT>
+ * @link http://www.github.com/andela-sakande
  **/
 namespace Sirolad\Evangelist;
 
+use GuzzleHttp\Client;
 use Sirolad\Evangelist\EvangelistFetcher;
 use GuzzleHttp\Exception\ClientException;
 use Sirolad\Evangelist\Exceptions\NullUserException;
 
 /*
-EvangelistRanker is the main class that perfoms the logic of ranking requested repository.
+* EvangelistRanker is the main class that performs the logic of ranking requested repository.
  */
 
 class EvangelistRanker
@@ -31,12 +32,12 @@ class EvangelistRanker
      */
     public function rankEvangelist($username)
     {
+        if (empty($username)) {
+                throw new NullUserException('You have provided an empty username.Kindly input a valid one.');
+        }
         try {
-            if (empty($username)) {
-                throw new NullUserException();
-            }
             $fetch = new EvangelistFetcher();
-            $rank = $fetch->getData($username);
+            $rank = $fetch->getData($username, new Client);
         } catch (ClientException $e) {
             return "Unregistered User!";
         } catch (NullUserException $e) {
