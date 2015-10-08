@@ -32,6 +32,7 @@ class EvangelistStatus
     {
         $this->username = $username;
     }
+
     /**
      * Returns the status of the request.
      *
@@ -40,7 +41,6 @@ class EvangelistStatus
     public function getStatus()
     {
         $evangelist = new EvangelistRanker();
-        $output = $evangelist->rankEvangelist($this->username);
-        return $output;
+        return $output = $evangelist->rankEvangelist($this->username);
     }
 }
