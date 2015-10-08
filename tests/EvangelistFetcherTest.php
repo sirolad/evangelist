@@ -18,14 +18,27 @@ EvangelistFetcherTest is the test for the EvangelistFetcher Class.
  */
 class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
 {
+    //class property
+    protected $testFetcher;
+
+    //instantiate the EvangelistFetcher Class
+    public function setUp()
+    {
+        $this->testFetcher = new EvangelistFetcher();
+    }
+
+    //destroy the EvangelistFetcher Class
+    public function tearDown()
+    {
+        unset($this->testFetcher);
+    }
     /*
     * Test for checking empty input.
     */
     public function testNullUserException()
     {
-        $testFetcher = new EvangelistFetcher();
-        $result = $testFetcher->getData('');
-        $this->assertEquals('You have provided an empty username.Kindly input a valid one.', $result);
+        $test = 'You have provided an empty username.Kindly input a valid one.';
+        $this->assertEquals($test, $this->testFetcher->getData(''));
     }
 
     /*
@@ -33,9 +46,7 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testUnregisteredUser()
     {
-        $testFetcher = new EvangelistFetcher();
-        $result = $testFetcher->getData('sirolady');
-        $this->assertEquals('Unregistered User!', $result);
+        $this->assertEquals('Unregistered User!', $this->testFetcher->getData('sirolady'));
     }
 
     /*
@@ -43,8 +54,6 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidUser()
     {
-        $testFetcher = new EvangelistFetcher();
-        $result = $testFetcher->getData('sirolad');
-        $this->assertTrue(is_integer($result));
+        $this->assertTrue(is_integer($this->testFetcher->getData('sirolad')));
     }
 }

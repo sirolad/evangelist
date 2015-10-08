@@ -16,40 +16,26 @@ EvangelistStatusTest is the test for the EvangelistStatus Class.
  */
 class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
 {
+    //class property
+    protected $statustest;
+
+    //instantiate the EvangelistStatus Class with argument
+    public function setUp()
+    {
+        $this->statustest = new EvangelistStatus(2345678);
+    }
+
+    //destroy the EvangelistStatus Class
+    public function tearDown()
+    {
+        unset($this->statustest);
+    }
+
     /*
-    * Test for output less than 5 repositories.
+    * Test for less string output.
      */
-    public function testLessthan5repos()
+    public function testStatusOutput()
     {
-        $test = new EvangelistStatus('andela-womokoro');
-        $result = $test->getStatus();
-        $this->assertEquals('You need to set forth at dawn!', $result);
-    }
-    /*
-    * Test for output more than 5 repositories.
-     */
-    public function testJuniorEvangelist()
-    {
-        $test = new EvangelistStatus('andela-sakande');
-        $result = $test->getStatus();
-        $this->assertEquals('Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.', $result);
-    }
-     /*
-    * Test for output more than 11 repositories.
-     */
-    public function testAssociateEvangelist()
-    {
-        $test = new EvangelistStatus('andela-vdugeri');
-        $result = $test->getStatus();
-        $this->assertEquals('Keep Up The Good Work, I crown you Associate Evangelist.', $result);
-    }
-     /*
-    * Test for output more than 21 repositories.
-     */
-    public function testMostSeniorEvangelist()
-    {
-        $test = new EvangelistStatus('andela');
-        $result = $test->getStatus();
-        $this->assertEquals('Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.', $result);
+        $this->assertTrue(is_string($this->statustest->getStatus()));
     }
 }

@@ -16,14 +16,26 @@ EvangelistRankerTest is the test for the EvangelistRanker Class.
  */
 class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
 {
+    //class property
+    protected $test;
+
+    //instantiate the EvangelistRanker Class
+    public function setUp()
+    {
+        $this->test = new EvangelistRanker();
+    }
+
+    //destroy the EvangelistRanker Class
+    public function tearDown()
+    {
+        unset($this->test);
+    }
     /*
     * Test for less than five repositories.
      */
     public function testLessthan5repos()
     {
-        $test = new EvangelistRanker();
-        $result = $test->rankEvangelist('andela-womokoro');
-        $this->assertEquals('You need to set forth at dawn!', $result);
+        $this->assertEquals('You need to set forth at dawn!', $this->test->rankEvangelist('andela-womokoro'));
     }
 
     /*
@@ -31,9 +43,8 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testJuniorEvangelist()
     {
-        $test = new EvangelistRanker();
-        $result = $test->rankEvangelist('andela-sakande');
-        $this->assertEquals('Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.', $result);
+        $tester = 'Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.';
+        $this->assertEquals($tester, $this->test->rankEvangelist('andela-sakande'));
     }
 
     /*
@@ -41,9 +52,8 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testAssociateEvangelist()
     {
-        $test = new EvangelistRanker();
-        $result = $test->rankEvangelist('andela-vdugeri');
-        $this->assertEquals('Keep Up The Good Work, I crown you Associate Evangelist.', $result);
+        $tester = 'Keep Up The Good Work, I crown you Associate Evangelist.';
+        $this->assertEquals($tester, $this->test->rankEvangelist('andela-vdugeri'));
     }
 
     /*
@@ -51,8 +61,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testMostSeniorEvangelist()
     {
-        $test = new EvangelistRanker();
-        $result = $test->rankEvangelist('busayo');
-        $this->assertEquals('Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.', $result);
+        $tester = 'Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.';
+        $this->assertEquals($tester, $this->test->rankEvangelist('busayo'));
     }
 }
