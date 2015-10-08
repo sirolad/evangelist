@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This package fetches the data of requested individual using the Github API and ranks the Individual into
  * categories based on the number of public repositories the individual possesses.

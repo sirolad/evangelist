@@ -1,4 +1,5 @@
 <?php
+
 /**
  * These are the test for the core files.
  *
@@ -11,6 +12,7 @@ namespace Sirolad\Evangelist\Test;
 
 use Sirolad\Evangelist\EvangelistRanker;
 use Sirolad\Evangelist\EvangelistFetcher;
+
 /*
 EvangelistRankerTest is the test for the EvangelistRanker Class.
  */
