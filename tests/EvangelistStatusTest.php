@@ -37,6 +37,6 @@ class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
      */
     public function testStatusOutput()
     {
-        $this->assertTrue(is_string($this->statustest->getStatus()));
+        $this->assertInternalType('string', $this->statustest->getStatus());
     }
 }
