@@ -41,6 +41,6 @@ class EvangelistStatus
     public function getStatus()
     {
         $evangelist = new EvangelistRanker();
-        return $output = $evangelist->rankEvangelist($this->username);
+        return $evangelist->rankEvangelist($this->username);
     }
 }
