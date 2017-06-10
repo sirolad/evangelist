@@ -8,7 +8,7 @@
         "email": "surajudeen.akande@andela.com"
     }],
     "require": {
-        "guzzlehttp/guzzle": "~4.0",
+        "guzzlehttp/guzzle": "~6.0",
         "vlucas/phpdotenv": "^2.0"
     },
     "require-dev": {

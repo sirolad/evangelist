@@ -47,8 +47,10 @@ class EvangelistFetcher
                 throw new NullUserException("You have provided an empty username.Kindly input a valid one.");
         }
         try {
-            $response = $client->get('https://api.github.com/users/'.$username. '?client_id=' .getenv('Client_ID') . '&client_secret=' .getenv('Client_SECRET'));
-            return $response->json()['public_repos'];
+            $response = $client->request('GET', 'https://api.github.com/users/'.$username. '?client_id=' .getenv('Client_ID') . '&client_secret=' .getenv('Client_SECRET'));
+            $result = json_decode($response->getBody());
+
+            return $result->public_repos;
         } catch (NullUserException $e) {
              return $e->getExceptionMessage();
         } catch (ClientException $e) {
