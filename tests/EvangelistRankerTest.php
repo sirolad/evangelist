@@ -46,7 +46,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
     public function testJuniorEvangelist()
     {
         $tester = 'Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.';
-        $this->assertEquals($tester, $this->test->rankEvangelist('andela-sakande'));
+        $this->assertEquals($tester, $this->test->rankEvangelist('abbysugar'));
     }
 
     /*
@@ -55,7 +55,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
     public function testAssociateEvangelist()
     {
         $tester = 'Keep Up The Good Work, I crown you Associate Evangelist.';
-        $this->assertEquals($tester, $this->test->rankEvangelist('andela-vdugeri'));
+        $this->assertEquals($tester, $this->test->rankEvangelist('abbysugar'));
     }
 
     /*
