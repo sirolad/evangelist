@@ -37,7 +37,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testLessthan5repos()
     {
-        $this->assertEquals('You need to set forth at dawn!', $this->test->rankEvangelist('andela-womokoro'));
+        $this->assertEquals('You need to set forth at dawn!', $this->test->rankEvangelist('oluseyearinde'));
     }
 
     /*
@@ -46,7 +46,7 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
     public function testJuniorEvangelist()
     {
         $tester = 'Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.';
-        $this->assertEquals($tester, $this->test->rankEvangelist('abbysugar'));
+        $this->assertEquals($tester, $this->test->rankEvangelist('sirolad'));
     }
 
     /*
