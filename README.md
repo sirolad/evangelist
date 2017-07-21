@@ -23,7 +23,7 @@ tests/         tests of the core package
 
 ## Installation
 
-[PHP](https://php.net) 5.5+ and [Composer](https://getcomposer.org) are required.
+[PHP](https://php.net) 7.0+ and [Composer](https://getcomposer.org) are required.
 
 Via Composer
 
