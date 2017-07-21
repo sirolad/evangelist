@@ -18,14 +18,13 @@ jobs:
 
     steps:
       - checkout
+      - run: composer self-update
 
       # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "composer.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
+                keys:
+                  - composer-v1-{{ checksum "composer.json" }}
+                  - composer-v1-
       - run: composer install -n --prefer-dist
 
       - save_cache:
