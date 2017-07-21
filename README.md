@@ -1,6 +1,7 @@
 # Open Source Evangelist Agnostic Package
 
 [![Build Status](https://travis-ci.org/andela-sakande/evangelist.svg)](https://travis-ci.org/andela-sakande/evangelist)
+[![CircleCI](https://circleci.com/gh/andela-sakande/evangelist.svg?style=svg)](https://circleci.com/gh/andela-sakande/evangelist)
 
 This package aims to provide an analysis based on the number of open source
 projects an individual possess on Github. It ranks the individual based on the number
