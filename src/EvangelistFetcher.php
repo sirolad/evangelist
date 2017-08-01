@@ -40,7 +40,7 @@ class EvangelistFetcher
      * @throws ClientException
      */
 
-    public function getData($username, Client $client)
+    public function getData($username, $client)
     {
         static::loadDotenv();
         if (empty($username)) {

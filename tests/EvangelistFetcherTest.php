@@ -11,8 +11,9 @@
 
 namespace Sirolad\Evangelist\Test;
 
-use Sirolad\Evangelist\EvangelistFetcher;
+use Mockery;
 use GuzzleHttp\Client;
+use Sirolad\Evangelist\EvangelistFetcher;
 
 /*
 * EvangelistFetcherTest is the test for the EvangelistFetcher Class.
@@ -21,6 +22,8 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
 {
     //class property
     protected $testFetcher;
+
+    protected $data = '{"public_repos":140}';
 
     //instantiate the EvangelistFetcher Class
     public function setUp()
@@ -56,6 +59,14 @@ class EvangelistFetcherTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidUser()
     {
-        $this->assertTrue(is_integer($this->testFetcher->getData('sirolad', new Client)));
+        $mock = Mockery::mock('response');
+        $mock->shouldReceive('getBody')
+             ->andReturn($this->data);
+
+        $guzzle = Mockery::mock('client');
+        $guzzle->shouldReceive('request')
+                ->andReturn($mock);
+
+        $this->assertTrue(is_integer($this->testFetcher->getData('sirolad', $guzzle)));
     }
 }
