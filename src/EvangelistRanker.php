@@ -30,7 +30,7 @@ class EvangelistRanker
      * @throws ClientException
      *
      */
-    public function rankEvangelist($username)
+    public function rankEvangelist($username, $fetch)
     {
         if (empty($username)) {
                 throw new NullUserException('You have provided an empty username.Kindly input a valid one.');
@@ -49,16 +49,16 @@ class EvangelistRanker
                 return "You need to set forth at dawn!";
                 break;
 
-            case $rank >= 21:
-                return "Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.";
+            case $rank >= 5:
+                return "Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.";
                 break;
 
             case $rank >= 11:
                 return "Keep Up The Good Work, I crown you Associate Evangelist.";
                 break;
 
-            case $rank >= 5:
-                return "Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.";
+            case $rank >= 21:
+                return "Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.";
                 break;
         }
     }

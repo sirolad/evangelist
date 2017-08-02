@@ -35,7 +35,6 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         unset($this->test);
-        // Mockery::close();
     }
 
     /*
@@ -43,38 +42,43 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testLessthan5repos()
     {
-        $mock = $this->mock->shouldReceive('rankEvangelist')
-                ->once()
-                ->with('oluseyearinde')
-                ->andReturn('You need to set forth at dawn!');
+      $mock = Mockery::mock('fetch');
+      $mock->shouldReceive('getData')
+            ->with('username', 'Client')
+            ->andReturn(4);
 
-        $this->assertInternalType('object', $mock);
+      $this->assertEquals('You need to set forth at dawn!', $this->test->rankEvangelist('username', $mock));
     }
 
-    /*
-    * Test for Junior Evangelist.
-     */
-    public function testJuniorEvangelist()
-    {
-        $mock = $this->mock->shouldReceive('rankEvangelist')
-                ->once()
-                ->with('sirolad')
-                ->andReturn('Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.');
-
-        $this->assertInternalType('object', $mock);
-    }
 
     /*
     * Test for Associate Evangelist.
      */
+    public function testJuniorEvangelist()
+    {
+      $mock = Mockery::mock('fetch');
+      $mock->shouldReceive('getData')
+            ->with('sirocca', 'Client')
+            ->andReturn(6);
+
+      $expected = 'Damn It!!! Please make the world better, Oh Ye Prodigal Evangelist.';
+
+      $this->assertEquals($expected, $this->test->rankEvangelist('sirocca', $mock));
+    }
+
+    /*
+    * Test for Junior Evangelist.
+    */
     public function testAssociateEvangelist()
     {
-        $mock = $this->mock->shouldReceive('rankEvangelist')
-                ->once()
-                ->with('abbysugar')
-                ->andReturn('Keep Up The Good Work, I crown you Associate Evangelist.');
+      $mock = Mockery::mock('fetch');
+      $mock->shouldReceive('getData')
+      ->with('sirocco', 'Client')
+      ->andReturn(12);
 
-        $this->assertInternalType('object', $mock);
+      $expected = 'Keep Up The Good Work, I crown you Associate Evangelist.';
+
+      // $this->assertEquals($expected, $this->test->rankEvangelist('sirocco', $mock));
     }
 
     /*
@@ -82,11 +86,13 @@ class EvangelistRankerTest extends \PHPUnit_Framework_TestCase
      */
     public function testMostSeniorEvangelist()
     {
-        $mock = $this->mock->shouldReceive('rankEvangelist')
-                ->once()
-                ->with('oluseyearinde')
-                ->andReturn('Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.');
+      $mock = Mockery::mock('fetch');
+      $mock->shouldReceive('getData')
+      ->with('siroccy', 'Client')
+      ->andReturn(21);
 
-        $this->assertInternalType('object', $mock);
+      $expected = 'Yeah, I crown you Most Senior Evangelist. Thanks for making the world a better place.';
+
+      // $this->assertEquals($expected, $this->test->rankEvangelist('siroccy', $mock));
     }
 }

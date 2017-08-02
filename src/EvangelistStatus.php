@@ -12,6 +12,7 @@
 namespace Sirolad\Evangelist;
 
 use Sirolad\Evangelist\EvangelistRanker;
+use Sirolad\Evangelist\EvangelistFetcher;
 
 /*
 * EvangelistStatus is the main class that finally outputs the rank of a requested repository.
@@ -41,6 +42,7 @@ class EvangelistStatus
     public function getStatus()
     {
         $evangelist = new EvangelistRanker();
-        return $evangelist->rankEvangelist($this->username);
+        $fetch = new EvangelistFetcher();
+        return $evangelist->rankEvangelist($this->username, $fetch);
     }
 }
